@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="/css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- navigation-bar -->
+
+    <nav>
+        <div class="container-nav">
+            <div class="logo">
+                <a href="index.html">Portfolio</a>
+            </div>
+            <button class="menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- filter -->
+
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wedding">Wedding</button>
+        <button class="filter-btn" data-filter="portrait">Portrait</button>
+        <button class="filter-btn" data-filter="landscape">Landscape</button>
+    </div>
+
+    <!-- Gallery Grid -->
+
+    <div class="gallery-grid">
+        <div class="gallery-item" data-category="wedding">
+            <img src="img/images-1.jpg" alt="wedding Photo">
+        </div>
+        <div class="gallery-item" data-category="landscape">
+            <img src="img/images-2.jpg" alt="Landscape Photo">
+        </div>
+        <div class="gallery-item" data-category="portrait">
+            <img src="img/images-3.jpg" alt="Portrait Photo">
+        </div>
+        <div class="gallery-item" data-category="wedding">
+            <img src="img/images-4.jpg" alt="wedding Photo">
+        </div>
+    </div>
+
+    <!-- Modal for larger image view -->
+    <div class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

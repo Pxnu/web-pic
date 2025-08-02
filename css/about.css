@@ -1,0 +1,698 @@
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Common Utility Classes */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* navigation-bar */
+nav {
+    height: 60px;
+    background-color: #333;
+    color: #ffff;
+    display: flex;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 25%);
+    position: relative;
+    z-index: 1000;
+}
+
+.container-nav {
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.nav-links a {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.current-page {
+    color: #FF7601;
+    background-color: rgba(255, 118, 1, 0.1);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #FF7601;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.current-page::after {
+    width: 80%;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #FF7601;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 25%);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+}
+
+/* About Page Styles */
+.about-container {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 3rem;
+    animation: slideInUp 1s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    margin: 0 auto 8rem;
+    padding: 6rem 3rem;
+    background: linear-gradient(135deg, #FF7601 0%, #0056b30d 100%);
+    border-radius: 30px;
+    animation: fadeIn 1.2s ease;
+    max-width: 1100px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Profile Section */
+.profile-section {
+    margin: 0 auto 8rem;
+    max-width: 1100px;
+    animation: slideInRight 0.8s ease;
+}
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-image {
+    position: relative;
+    transform: perspective(1000px) rotateY(5deg);
+    transition: transform 0.5s ease;
+}
+
+.profile-image:hover {
+    transform: perspective(1000px) rotateY(0);
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    filter: brightness(1.05);
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid #FF7601;
+    border-radius: 20px;
+    z-index: -1;
+    animation: borderPulse 2s infinite;
+}
+
+.profile-image::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(135deg, #FF7601 0%, #FF7601 100%);
+    border-radius: 20px;
+    z-index: -2;
+}
+
+.profile-content {
+    margin: 4rem 0;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-content h2 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.profile-title {
+    color: #FF7601;
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.profile-text {
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.philosophy-quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #333;
+    padding: 2rem;
+    border-left: 4px solid #FF7601;
+    background: #f8f9fa;
+    border-radius: 0 10px 10px 0;
+    margin: 2rem 0;
+}
+
+/* Skills & Awards Section */
+.skills-awards-section {
+    padding: 6rem 3rem;
+    background: #f8f9fa;
+    border-radius: 30px;
+    animation: fadeIn 1s ease 0.2s both;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 0 1rem;
+}
+
+.section-title h2 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.section-title p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+    padding: 1rem;
+    margin-bottom: 6rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Skill Progress Bars */
+.skill-progress {
+    margin-top: 1.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FF7601, #FFA041);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease;
+}
+
+.skill-card:hover .progress-fill {
+    transform: scaleX(var(--progress));
+}
+
+.skill-card {
+    background: #fff;
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #FEF3E2, #FF7601);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.skill-card:hover::before {
+    transform: scaleX(1);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    background: #FF7601;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.skill-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Awards List */
+.awards-grid {
+    max-width: 900px;
+    margin: 4rem auto 0;
+    padding: 2rem;
+    position: relative;
+}
+
+.awards-grid::before {
+    content: '';
+    position: absolute;
+    left: 140px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        transparent,
+        #FFB22C 5%,
+        #FF7601 95%,
+        transparent
+    );
+    opacity: 0.3;
+}
+
+.award-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.award-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #FFB22C, #FF7601);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.award-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.award-card:hover::before {
+    opacity: 1;
+}
+
+.award-icon {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    min-width: 120px;
+    text-align: center;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, 
+        #FFB22C 0%, 
+        #FF7601 100%
+    );
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+.award-icon::after {
+    content: '★';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: #F3C623;
+    font-size: 1.2rem;
+    animation: starPulse 2s infinite;
+}
+
+.award-content {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.award-content h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.award-content h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #FF7601, transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.award-icon:hover .award-content h3::after {
+    transform: scaleX(1);
+}
+
+.award-content p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 90%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* nav-animations */
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes borderPulse {
+    0% {
+        border-color: #FEF3E2;
+    }
+    50% {
+        border-color: #F3C623;
+    }
+    100% {
+        border-color: #FF7601;
+    }
+}
+
+@keyframes starPulse {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .profile-container {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile-image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 1rem;
+    }
+
+    .section-title h2,
+    .profile-content h2 {
+        font-size: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .award-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .award-year {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image::after {
+        display: none;
+    }
+
+    .profile-container,
+    .award-item {
+        padding: 1.5rem;
+    }
+
+    .philosophy-quote {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+}

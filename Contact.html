@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- navigation-bar -->
+
+    <nav>
+        <div class="container-nav">
+            <div class="logo">
+                <a href="index.html">Portfolio</a>
+            </div>
+            <button class="menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+
+    <div class="contact-container">
+        <h1 class="contact-title">ติดต่อเรา</h1>
+        
+        <div class="contact-wrapper">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>ข้อมูลการติดต่อ</h2>
+                <div class="info-items">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-content">
+                            <h3>โทรศัพท์</h3>
+                            <p>+66 89 XXX XXXX</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-content">
+                            <h3>อีเมล</h3>
+                            <p>contact@yourwebsite.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <h3>ที่อยู่สตูดิโอ</h3>
+                            <p>กรุงเทพมหานคร, ประเทศไทย</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h3>โซเชียลมีเดีย</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>ส่งข้อความถึงเรา</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">ชื่อ-นามสกุล</label>
+                        <input type="text" id="name" name="name" required placeholder="กรุณากรอกชื่อ-นามสกุล">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">อีเมล</label>
+                        <input type="email" id="email" name="email" required placeholder="กรุณากรอกอีเมล">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทรศัพท์</label>
+                        <input type="tel" id="phone" name="phone" placeholder="กรุณากรอกเบอร์โทรศัพท์">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">หัวข้อ</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">เลือกหัวข้อ</option>
+                            <option value="wedding">ถ่ายภาพงานแต่งงาน</option>
+                            <option value="portrait">ถ่ายภาพบุคคล/แฟชั่น</option>
+                            <option value="event">ถ่ายภาพงานอีเวนท์</option>
+                            <option value="other">อื่นๆ</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">ข้อความ</label>
+                        <textarea id="message" name="message" required placeholder="กรุณากรอกรายละเอียด"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> ส่งข้อความ
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
