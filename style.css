@@ -58,9 +58,27 @@ nav {
     position: relative;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.current-page {
     color: #FF7601;
     background-color: rgba(255, 118, 1, 0.1);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #FF7601;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.current-page::after {
+    width: 80%;
 }
 
 .nav-links a::after {
